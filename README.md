@@ -1,3 +1,5 @@
+<img src="./src/img/farmers-market.drawio.png" height="400" alt="component-drawing"/> 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
