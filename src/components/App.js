@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import Calendar from "./Calendar";
+import CalendarControl from "./CalendarControl";
 import Seasonal from "./Seasonal";
 import Stories from "./Stories";
 
@@ -11,7 +11,7 @@ function App() {
         <Header/>
       </div>
       <div id="main-body">
-        <Calendar/>
+        <CalendarControl/>
         <Stories/>
         <Seasonal/>
       </div>
