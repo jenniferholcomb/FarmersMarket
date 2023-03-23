@@ -287,13 +287,39 @@ class SeasonalControl extends React.Component {
 
   render() {
     let currentMonth = 2;
+    if (this.state.currentState === 'January') {
+      currentMonth = 0;
+    } else if (this.state.currentState === 'February') {
+      currentMonth = 1;
+    } else if (this.state.currentState === 'March') {
+      currentMonth = 2;
+    } else if (this.state.currentState === 'April') {
+      currentMonth = 3;
+    } else if (this.state.currentState === 'May') {
+      currentMonth = 4;
+    } else if (this.state.currentState === 'June') {
+      currentMonth = 5;
+    } else if (this.state.currentState === 'July') {
+      currentMonth = 6;
+    } else if (this.state.currentState === 'August') {
+      currentMonth = 7;
+    } else if (this.state.currentState === 'September') {
+      currentMonth = 8;
+    } else if (this.state.currentState === 'October') {
+      currentMonth = 9;
+    } else if (this.state.currentState === 'November') {
+      currentMonth = 10;
+    }else {
+      currentMonth = 11;
+    }
     return (
       <React.Fragment>
         <div id="seasonal">
-        <Seasonal 
+          <Seasonal 
             month={availableProduce[currentMonth].month}
             selection={availableProduce[currentMonth].selection}
-            />
+          />
+          {availableProduce.map((item, index) => <p>{<button onClick={() => this.handleClick(availableProduce[index].month)}>{availableProduce[index].month}</button>}</p>)}
         </div>
       </React.Fragment>
     )

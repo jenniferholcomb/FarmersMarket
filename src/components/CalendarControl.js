@@ -57,7 +57,7 @@ class CalendarControl extends React.Component {
 
   render() {
     let currentDay = 0;
-    if(this.state.currentState === 'Monday') {
+    if (this.state.currentState === 'Monday') {
       currentDay = 1;
     } else if (this.state.currentState === 'Tuesday') {
       currentDay = 2;
