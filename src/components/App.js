@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import CalendarControl from "./CalendarControl";
-import Seasonal from "./Seasonal";
+import SeasonalControl from "./SeasonalControl";
 import Stories from "./Stories";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <div id="main-body">
         <CalendarControl/>
         <Stories/>
-        <Seasonal/>
+        <SeasonalControl/>
       </div>
     </React.Fragment>
   );
