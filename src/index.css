@@ -61,12 +61,16 @@ button.seas-button {
   background-color: white;
   margin: 25px;
   border-radius: 7px;
-  height: 700px;
+  height: 800px;
 }
 
 #daily {
   margin: 20px;
   text-align: center;
+  display: grid;
+  grid-auto-flow: row;
+  /* overflow-y: scroll; */
+  /* scrollbar-width: thin; */
 }
 
 h2 {
@@ -90,10 +94,29 @@ h1, h2, h3, h4 {
 
 p.location {
   font-size: 22px;
+  transform: scale(1.13, 1);
+  font-weight: 450;
 }
 
 p {
-  margin: 10px;
+  margin: 5px;
+}
+
+h3.day-name {
+  color: gray;
+  text-transform: uppercase;
+  transform: scale(1.15, 1);
+  letter-spacing: 4px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 350;
+}
+
+br {
+  display: block;
+  content: '';
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 /* const itemStyles = {
@@ -101,3 +124,12 @@ p {
   overflowY: 'scroll'
 } */
 
+#daily-item {
+  box-shadow: 0 0 4px 0 rgba(249, 246, 244, 0.698), 0 0px 5px 0 rgba(249, 246, 244, 0.698);
+  border-radius: 7px;
+  padding-top: 20px;
+  padding-bottom: 1px;
+  background-color: rgba(249, 246, 244, 0.52);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.195);
+  /* border-right: solid rgba(0, 0, 0, 0.015); */
+}
