@@ -78,7 +78,7 @@ class CalendarControl extends React.Component {
             <button class="seas-button" onClick={() => this.handleClick('Monday')}>{'CONTACT US'}</button>
           </div>
           <div id="schedule">
-            <h2>THIS WEEK'S SCHEDULE</h2>
+            <h2 className="schedule">THIS WEEK'S SCHEDULE</h2>
             <hr />
             <div id="daily">
               {marketSchedule.map(day => {

@@ -5,7 +5,7 @@ import SeasonalControl from "./SeasonalControl";
 function App() {
   return (
     <React.Fragment>
-      <div id="main-body">
+      <div className="main-body">
         <CalendarControl/>
         <SeasonalControl/>
       </div>

@@ -1,5 +1,7 @@
 import React from "react";
 import Seasonal from "./Seasonal";
+import logoImage from "./../img/farm-diagonal.png";
+import logoArt from "./../img/farm-logo.svg"
 
 const availableProduce = [  
   {  
@@ -316,7 +318,14 @@ class SeasonalControl extends React.Component {
     }
     return (
       <React.Fragment>
-        <div id="seasonal">
+        <div className="seasonal">
+
+          <div className="clip">
+            <img src={logoImage} alt="Farm field" />
+          </div>
+          <div className="overlay">
+            <img src={logoArt} alt="Logo" />
+          </div>
           <Seasonal 
             month={availableProduce[currentMonth].month}
             selection={availableProduce[currentMonth].selection}

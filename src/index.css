@@ -12,20 +12,40 @@ code {
     monospace;
 }
 
-#main-body {
+
+
+.main-body {
   background-color: rgb(249, 246, 244);
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 450px 450px;
-  margin: 25px
+  margin: 25px;
 }
-#seasonal {
+
+.seasonal {
   grid-column: 1 / span 2;
   grid-row: 1 / span 2;
-  outline: 1px solid black;
-
+  position: relative;
 }
+
+.clip img {
+  /* -webkit-clip-path: polygon(0 0, 0 100px, 100px 80px, 100px 0);  */
+  clip-path: polygon(0 0, 0 100%, 100% 0, 0 0);
+  z-index: 999;
+  width: 85%;
+  top: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 30px;
+  width: 28%;
+  left: 60px;
+}
+
+
+
 
 #calendar {
   grid-column: 3;
@@ -39,12 +59,12 @@ code {
 } */
 
 button.seas-button {
-  width: 175px;
-  height: 50px;
+  width: 45%;
+  height: 60px;
   border-radius: 7px;
   background-color: rgb(231, 236, 0);
   border: none;
-  font-size: 16px;
+  font-size: 18px;
   font-family: 'Cabin', sans-serif;
 }
 
@@ -71,19 +91,21 @@ button.seas-button {
   grid-auto-flow: row;
   /* overflow-y: scroll; */
   /* scrollbar-width: thin; */
+  grid-gap: 20px;
 }
 
-h2 {
-  font-weight: 320;
-  font-size: 28px;
+h2.schedule {
+  font-weight: 550;
+  font-size: 24px;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 hr {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   background-color: rgb(0, 139, 193);
-  height: 1px;
+  height: 1.5px;
   border: none;
 }
 
@@ -132,4 +154,6 @@ br {
   background-color: rgba(249, 246, 244, 0.52);
   border-bottom: 1px solid rgba(0, 0, 0, 0.195);
   /* border-right: solid rgba(0, 0, 0, 0.015); */
+  
 }
+
