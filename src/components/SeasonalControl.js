@@ -288,21 +288,6 @@ class SeasonalControl extends React.Component {
 
   render() {
     let currentMonth = null;
-    const myStyledComponentStyles = {
-      backgroundColor: '#ecf0f1',
-      gridColumn: '3',
-      gridRow: '1 / span 2',
-      outline: '1px solid black',
-      marginRight: '30px',
-      display: 'flex',
-      justifyContent: 'space-evenly',
-      width: '95%'
-    }
-
-    const itemStyles = {
-      maxHeight: '600px',
-      overflowY: 'scroll'
-    }
 
     if (this.state.currentState === 'January') {
       currentMonth = 0;
@@ -331,19 +316,13 @@ class SeasonalControl extends React.Component {
     }
     return (
       <React.Fragment>
-        {/* <div id="seasonal"> */}
-          <div style={myStyledComponentStyles}>
-            <div style={itemStyles}>
-              <Seasonal 
-                month={availableProduce[currentMonth].month}
-                selection={availableProduce[currentMonth].selection}
-              />
-            </div>
-            <div style={itemStyles}>
-              {availableProduce.map((item, index) => <p>{<button onClick={() => this.handleClick(availableProduce[index].month)}>{availableProduce[index].month}</button>}</p>)}
-            </div>
-          </div>
-        {/* </div> */}
+        <div id="seasonal">
+          <Seasonal 
+            month={availableProduce[currentMonth].month}
+            selection={availableProduce[currentMonth].selection}
+          />
+          {availableProduce.map((item, index) => <p>{<button onClick={() => this.handleClick(availableProduce[index].month)}>{availableProduce[index].month}</button>}</p>)}
+        </div>
       </React.Fragment>
     )
   }

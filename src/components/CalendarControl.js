@@ -73,18 +73,24 @@ class CalendarControl extends React.Component {
     return (
       <React.Fragment>
         <div id="calendar">
-          <Calendar 
-            day={marketSchedule[currentDay].day}
-            location={marketSchedule[currentDay].location}
-            hours={marketSchedule[currentDay].hours}
-            booth={marketSchedule[currentDay].booth}/>
-        <button onClick={() => this.handleClick('Sunday')}>{'Sunday'}</button>
-        <button onClick={() => this.handleClick('Monday')}>{'Monday'}</button>
-        <button onClick={() => this.handleClick('Tuesday')}>{'Tuesday'}</button>
-        <button onClick={() => this.handleClick('Wednesday')}>{'Wednesday'}</button>
-        <button onClick={() => this.handleClick('Thursday')}>{'Thursday'}</button>
-        {/* <button onClick={() => this.handleClick('Friday')}>{'Friday'}</button> */}
-        <button onClick={() => this.handleClick('Saturday')}>{'Saturday'}</button>
+          <div id="info">
+            <button class="seas-button" onClick={() => this.handleClick('Sunday')}>{'FIND IN STORE'}</button>
+            <button class="seas-button" onClick={() => this.handleClick('Monday')}>{'CONTACT US'}</button>
+          </div>
+          <div id="schedule">
+            <h2>THIS WEEK'S SCHEDULE</h2>
+            <hr />
+            <div id="daily">
+              {marketSchedule.map(day => {
+                return <Calendar 
+                day={day.day}
+                location={day.location}
+                hours={day.hours}
+                booth={day.booth}/>
+              })}
+            </div>
+
+          </div>
         </div>
       </React.Fragment>
     );
@@ -92,3 +98,11 @@ class CalendarControl extends React.Component {
 }
 
 export default CalendarControl;
+
+{/* <button onClick={() => this.handleClick('Sunday')}>{'Sunday'}</button>
+<button onClick={() => this.handleClick('Monday')}>{'Monday'}</button>
+<button onClick={() => this.handleClick('Tuesday')}>{'Tuesday'}</button>
+<button onClick={() => this.handleClick('Wednesday')}>{'Wednesday'}</button>
+<button onClick={() => this.handleClick('Thursday')}>{'Thursday'}</button>
+<button onClick={() => this.handleClick('Friday')}>{'Friday'}</button>
+<button onClick={() => this.handleClick('Saturday')}>{'Saturday'}</button> */}

@@ -4,10 +4,11 @@ import PropTypes from "prop-types";
 function Calendar(props) {
   return (
     <React.Fragment>
+
       <h3>{props.day}</h3>
-      <p>{props.location}</p>
-      <p>{props.hours}</p>
-      <p>{props.booth}</p>
+      <p className="location">{props.location}</p>
+      <p>{props.hours} &nbsp; <strong>BOOTH:</strong> {props.booth}</p>
+      <p></p>
     </React.Fragment>
   );
  }
