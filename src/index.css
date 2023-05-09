@@ -19,19 +19,33 @@ code {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 450px 450px;
+  height: 750px;
   margin: 25px;
 }
 
 .seasonal {
   grid-column: 1 / span 2;
-  grid-row: 1 / span 2;
-  position: relative;
+  display: grid;
+  grid-template-rows: 400px 233px 100px;
+  position: absolute;
+}
+
+.produce {
+  grid-row: 2;
+  margin: 20px;
+  
+}
+
+.seasonal-middle {
+  display: flex;
+}
+
+.seasonal-bottom {
+  grid-row: 3;
 }
 
 
 .clip img {
-  /* -webkit-clip-path: polygon(0 0, 0 100px, 100px 80px, 100px 0);  */
   clip-path: polygon(0 0, 0 100%, 100% 0, 0 0);
   z-index: 999;
   width: 85%;
@@ -41,24 +55,25 @@ code {
 
 .overlay {
   position: absolute;
-  top: 30px;
-  width: 28%;
+  top: 60px;
+  width: 18%;
   left: 60px;
   min-width: 180px;
 }
 
 .diag-lines-yellow {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 35px;
   background-color: rgb(231, 236, 0);
   transform: rotate(155deg) skewX(-25deg);
-  top: 79px;
+  top: 150px;
   left: -100px;
   min-width: 1050px;
+  border-bottom: rgb(196, 93, 0);
 }
 
-.diag-lines-red {
+/* .diag-lines-red {
   position: fixed;
   width: 100%;
   height: 10px;
@@ -67,9 +82,9 @@ code {
   top: 125px;
   left: -100px;
   min-width: 1050px;
-}
+} */
 
-.diag-lines-blue {
+/* .diag-lines-blue {
   position: fixed;
   width: 100%;
   height: 12px;
@@ -78,44 +93,67 @@ code {
   top: 145px;
   left: -100px;
   min-width: 1050px;
-}
-
-.seasonal-text {
-  position: absolute;
-  /* transform: rotate(335deg) skewX(-25deg); */
-  font-size: 24px;
-  top: 0px;
-  left: 155px;
-}
-/* .diag-lines {
-  display: inline-block;
-  overflow: hidden;
-  margin: 0 3em;
-  width: 10em;
-  height: 8.66em;
-  transform: rotate(-30deg) skewX(30deg);
 } */
 
+.seasonal-text {
+  position:relative;
+  font-size: 20px;
+  right: 155px;
+  top: 60px;
+  width: 170px;
+  justify-content: flex-end;
+  text-align: right;
+  transform: scale(1.13, 1);
+}
+
+
+
+.produce-icon {
+  height: 90px;
+  width: 90px;
+  background-color: rgb(0, 139, 193);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 #calendar {
   grid-column: 3;
-  grid-row: 1 / span 2;
   justify-content: space-evenly;
   width: 95%;
 }
 
-/* button {
-  outline: none;
-} */
-
-button.seas-button {
-  width: 45%;
+button, select {
   height: 60px;
   border-radius: 7px;
   background-color: rgb(231, 236, 0);
+  box-shadow: 0 2px 5px 0 rgba(115, 113, 113, 0.097), 0 6px 5px 0 rgba(83, 80, 80, 0.107);
   border: none;
-  font-size: 18px;
-  font-family: 'Cabin', sans-serif;
+  font-size: 14px;
+  font-weight: 550;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.195);
+}
+
+button:hover {
+  transform: scale(1.04);
+  transition: all 0.5s ease;
+  background-color: rgba(153, 156, 112, 0.15);
+}
+
+select {
+  width: 30%;
+  position: absolute;
+  right: 175px;
+  top: 330px;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+button.cal-button {
+  width: 45%;
 }
 
 #info {
@@ -131,7 +169,10 @@ button.seas-button {
   background-color: white;
   margin: 25px;
   border-radius: 7px;
-  height: 800px;
+  height: 605px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: thin;
 }
 
 #daily {
@@ -139,14 +180,12 @@ button.seas-button {
   text-align: center;
   display: grid;
   grid-auto-flow: row;
-  /* overflow-y: scroll; */
-  /* scrollbar-width: thin; */
   grid-gap: 20px;
 }
 
 h2.schedule {
   font-weight: 550;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   letter-spacing: 1px;
 }
@@ -165,9 +204,9 @@ h1, h2, h3, h4 {
 }
 
 p.location {
-  font-size: 22px;
+  font-size: 18px;
   transform: scale(1.13, 1);
-  font-weight: 450;
+  font-weight: 600;
 }
 
 p {
@@ -191,11 +230,6 @@ br {
   margin-bottom: 10px;
 }
 
-/* const itemStyles = {
-  maxHeight: '600px',
-  overflowY: 'scroll'
-} */
-
 #daily-item {
   box-shadow: 0 0 4px 0 rgba(249, 246, 244, 0.698), 0 0px 5px 0 rgba(249, 246, 244, 0.698);
   border-radius: 7px;
@@ -203,7 +237,5 @@ br {
   padding-bottom: 1px;
   background-color: rgba(249, 246, 244, 0.52);
   border-bottom: 1px solid rgba(0, 0, 0, 0.195);
-  /* border-right: solid rgba(0, 0, 0, 0.015); */
-  
 }
 
