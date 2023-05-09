@@ -29,12 +29,14 @@ code {
   position: relative;
 }
 
+
 .clip img {
   /* -webkit-clip-path: polygon(0 0, 0 100px, 100px 80px, 100px 0);  */
   clip-path: polygon(0 0, 0 100%, 100% 0, 0 0);
   z-index: 999;
   width: 85%;
   top: 0;
+  min-width: 590px;
 }
 
 .overlay {
@@ -42,9 +44,57 @@ code {
   top: 30px;
   width: 28%;
   left: 60px;
+  min-width: 180px;
 }
 
+.diag-lines-yellow {
+  position: fixed;
+  width: 100%;
+  height: 35px;
+  background-color: rgb(231, 236, 0);
+  transform: rotate(155deg) skewX(-25deg);
+  top: 79px;
+  left: -100px;
+  min-width: 1050px;
+}
 
+.diag-lines-red {
+  position: fixed;
+  width: 100%;
+  height: 10px;
+  background-color: rgb(196, 93, 0);
+  transform: rotate(155deg) skewX(-25deg);
+  top: 125px;
+  left: -100px;
+  min-width: 1050px;
+}
+
+.diag-lines-blue {
+  position: fixed;
+  width: 100%;
+  height: 12px;
+  background-color: rgb(0, 139, 193);
+  transform: rotate(335deg) skewX(-25deg);
+  top: 145px;
+  left: -100px;
+  min-width: 1050px;
+}
+
+.seasonal-text {
+  position: absolute;
+  /* transform: rotate(335deg) skewX(-25deg); */
+  font-size: 24px;
+  top: 0px;
+  left: 155px;
+}
+/* .diag-lines {
+  display: inline-block;
+  overflow: hidden;
+  margin: 0 3em;
+  width: 10em;
+  height: 8.66em;
+  transform: rotate(-30deg) skewX(30deg);
+} */
 
 
 #calendar {

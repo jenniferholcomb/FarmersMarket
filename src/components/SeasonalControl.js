@@ -322,6 +322,11 @@ class SeasonalControl extends React.Component {
 
           <div className="clip">
             <img src={logoImage} alt="Farm field" />
+            <div className="diag-lines-yellow"></div>
+            <div className="diag-lines-red"></div>
+            <div className="diag-lines-blue">
+              <h3 className="seasonal-text">SEASONAL THIS MONTH AT THE MARKET!</h3>
+            </div>
           </div>
           <div className="overlay">
             <img src={logoArt} alt="Logo" />
